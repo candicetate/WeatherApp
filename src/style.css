@@ -45,7 +45,7 @@ h3 {
   border: 5px solid #000000;
   border-radius: 10px;
   padding: 25px;
-  margin: 50px auto;
+  margin: 15px auto;
   width: 750px;
 }
 
@@ -91,6 +91,20 @@ h3 {
   font-size: 15px;
   line-height: 15px;
   width: 50%;
+}
+
+.footer {
+  display: block;
+  font-size: 12px;
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+a.footer {
+  color: #000000;
+  display: inline;
+  text-decoration: underline;
 }
 
 .futuretemp {
