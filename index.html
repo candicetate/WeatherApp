@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/cda945a759.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="src/style.css" />
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <title>Weather App</title>
+  </head>
+  <body>
+    <!-- Main Container Div -->
+    <div class="container">
+      <!-- First Row Div-->
+      <div class="row">
+        <!--First Column -->
+        <div class="col-6 currentweather">
+          <span class="bigtext" id="temperature"> </span>
+          <a href="#" class="degrees-c"> °C</a><span class="degrees">/</span
+          ><a href="#" class="degrees-f">°F</a>
+
+          <h2>
+            <span class="description"></span>
+            <span id="currentemoji"></span>
+          </h2>
+
+          <h3>Date and Time</h3>
+
+          <span class="maincity"></span>
+          <!-- Close First Column -->
+        </div>
+
+        <!--Second Column -->
+        <div class="col-6">
+          <p class="fiveday">5 Day Forecast</p>
+
+          <p class="futuretemp" id="nextday">
+            21°C
+            <span id="nextemoji"></span>
+            <br />
+            <span class="dayofweek">
+              Tomorrow
+            </span>
+          </p>
+
+          <!-- 4 day future forcast row-->
+          <div class="row">
+            <div class="col-6">
+              <p class="futuretemp">
+                23°C
+                <i class="fas fa-sun"></i>
+                <br />
+                <span class="dayofweek">Saturday </span>
+              </p>
+            </div>
+            <div class="col-6">
+              <p class="futuretemp">
+                21°C
+                <i class="fas fa-cloud-sun"></i>
+                <br />
+                <span class="dayofweek">Sunday </span>
+              </p>
+            </div>
+            <!-- Close 4 day forecast row -->
+          </div>
+          <!-- 4 Day forecast second row-->
+          <div class="row">
+            <div class="col-6">
+              <p class="futuretemp">
+                23°C
+                <i class="fas fa-cloud-sun"></i>
+                <br />
+                <span class="dayofweek">Monday </span>
+              </p>
+            </div>
+            <div class="col-6">
+              <p class="futuretemp">
+                26°C
+                <i class="fas fa-cloud-sun"></i>
+                <br />
+                <span class="dayofweek">
+                  Tuesday
+                </span>
+              </p>
+            </div>
+            <!-- Close 4 day forecast 2nd row -->
+          </div>
+
+          <!-- Close Second Column -->
+        </div>
+        <!-- Close First Row Div-->
+      </div>
+
+      <!-- Second Row Div-->
+      <div class="row">
+        <!--First Column -->
+        <div class="col-12">
+          <form id="search-form">
+            <input
+              id="cityinput"
+              tag="cityinput"
+              class="form-control form-control-lg"
+              type="text"
+              placeholder="Search"
+            />
+
+            <button
+              id="searchforcity"
+              class="btn btn-dark btn btn-primary btn-lg"
+              input
+              type="submit"
+              value="Find A City"
+            >
+              Find A City
+            </button>
+
+            <button
+              id="getcurrentcity"
+              class="btn btn-dark btn btn-primary btn-lg"
+              input
+              type="submit"
+              value="Current Location"
+            >
+              Current Location
+            </button>
+          </form>
+          <!-- Close Second Column-->
+        </div>
+        <!-- Close Second Row Div-->
+      </div>
+
+      <!-- Main Container Div -->
+    </div>
+
+    <script src="src/javascript.js"></script>
+  </body>
+</html>

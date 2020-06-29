@@ -1,0 +1,113 @@
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+a.degrees-c {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+a.degrees-f {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  font-size: 100px;
+  font-weight: 900;
+}
+
+h2 {
+  font-style: italic;
+  font-weight: 400;
+  line-height: 10px;
+}
+
+h3 {
+  font-size: 15px;
+  font-weight: 200;
+}
+
+.maincity {
+  font-size: 54px;
+  font-weight: 900;
+}
+
+#currentCity {
+  font-size: 54px;
+  font-weight: 900;
+  text-transform: capitalize;
+}
+
+.col-3 {
+  width: 100%;
+}
+
+.container {
+  border: 5px solid #000000;
+  border-radius: 10px;
+  padding: 25px;
+  margin: 50px auto;
+  width: 750px;
+}
+
+.currentweather {
+  border: 5px solid #00000025;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.dayofweek {
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.degrees {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 50px;
+}
+
+.degrees-c {
+  font-size: 50px;
+}
+
+.degrees-f {
+  font-size: 50px;
+}
+
+.description {
+  text-transform: capitalize;
+  line-height: 15px;
+}
+
+.fiveday {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.form-control {
+  display: inline;
+  font-size: 15px;
+  line-height: 15px;
+  width: 50%;
+}
+
+.futuretemp {
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 30px;
+  text-align: center;
+}
+
+.bigtext {
+  font-size: 100px;
+  font-weight: 900;
+}
+
+.precipitation {
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 200;
+  line-height: 15px;
+}
