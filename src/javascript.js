@@ -79,6 +79,7 @@ function showWeather(response) {
   // Emojis
   let emojiDescription = response.data.weather[0].id;
   let emoji = document.querySelector("#currentemoji");
+
   // Thunderstorm
   if (emojiDescription <= 232) {
     emoji.innerHTML = `<img src=\"http://openweathermap.org/img/wn/11d.png">`;
@@ -139,5 +140,4 @@ let currentLocationPress = document.querySelector("#getcurrentcity");
 currentLocationPress.addEventListener("click", currentLocationButton);
 
 // On load
-
 searchCity("Vancouver");
