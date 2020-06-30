@@ -41,36 +41,19 @@ if (minutes < 10) {
 
 h3.innerHTML = `${day} ${month} ${date}, ${year} at ${hours}:${minutes}`;
 
-// Degrees Change
-
-function convertToFahrenheit(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 24;
-}
-
-function convertToCelsius(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 19;
-}
-
-let fahrenheitLink = document.querySelector("a.degrees-f");
-fahrenheitLink.addEventListener("click", convertToFahrenheit);
-
-let celsiusLink = document.querySelector("a.degrees-c");
-celsiusLink.addEventListener("click", convertToCelsius);
-
 // Search
 // Current Weather
 // Change emoji
 
 function showWeather(response) {
+  // Celcius Temperature Variable
+  celsiusTemperature = response.data.main.temp;
+
   // City
   document.querySelector(".maincity").innerHTML = response.data.name;
   // Temperature
   document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
+    celsiusTemperature
   );
   // Description
   document.querySelector(".description").innerHTML =
@@ -138,6 +121,33 @@ function currentLocationButton(event) {
 
 let currentLocationPress = document.querySelector("#getcurrentcity");
 currentLocationPress.addEventListener("click", currentLocationButton);
+
+// Degrees Change
+
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  let convertToFTemp = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(convertToFTemp);
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+}
+
+function convertToCelsius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+}
+
+let celsiusTemperature = null;
+
+let fahrenheitLink = document.querySelector("a#degrees-f");
+fahrenheitLink.addEventListener("click", convertToFahrenheit);
+
+let celsiusLink = document.querySelector("a#degrees-c");
+celsiusLink.addEventListener("click", convertToCelsius);
 
 // On load
 searchCity("Vancouver");

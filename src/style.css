@@ -2,11 +2,11 @@ body {
   font-family: "Nunito", sans-serif;
 }
 
-a.degrees-c {
+a#degrees-c {
   color: rgba(0, 0, 0, 0.5);
 }
 
-a.degrees-f {
+a#degrees-f {
   color: rgba(0, 0, 0, 0.5);
 }
 
@@ -29,6 +29,11 @@ h3 {
 .maincity {
   font-size: 54px;
   font-weight: 900;
+}
+
+.active {
+  color: #000000;
+  cursor: default;
 }
 
 #currentCity {
@@ -66,12 +71,30 @@ h3 {
   font-size: 50px;
 }
 
-.degrees-c {
+#degrees-c {
   font-size: 50px;
 }
 
-.degrees-f {
+#degrees-c.active {
+  color: #000000;
+  cursor: default;
+}
+
+#degrees-c.active:hover {
+  text-decoration: none;
+}
+
+#degrees-f {
   font-size: 50px;
+}
+
+#degrees-f.active {
+  color: #000000;
+  cursor: default;
+}
+
+#degrees-f.active:hover {
+  text-decoration: none;
 }
 
 .description {
