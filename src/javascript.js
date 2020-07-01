@@ -78,33 +78,10 @@ function showWeather(response) {
   humidity.innerHTML = `${Math.round(response.data.main.humidity)}%`;
 
   // Emojis
-  let emojiDescription = response.data.weather[0].id;
   let emoji = document.querySelector("#currentemoji");
-
-  // Thunderstorm
-  if (emojiDescription <= 232) {
-    emoji.innerHTML = `<img src=\"http://openweathermap.org/img/wn/11d.png">`;
-  }
-  // Rain
-  if (emojiDescription >= Math.max(232) && emojiDescription < Math.min(531)) {
-    emoji.innerHTML = `<img src=\"http://openweathermap.org/img/wn/09d.png">`;
-  }
-  // Snow
-  if (emojiDescription >= Math.max(600) && emojiDescription < Math.min(622)) {
-    emoji.innerHTML = `<img src=\"http://openweathermap.org/img/wn/13d.png">`;
-  }
-  // Fog
-  if (emojiDescription === 741) {
-    emoji.innerHTML = `<img src=\"http://openweathermap.org/img/wn/50d.png">`;
-  }
-  // Clear
-  if (emojiDescription === 800) {
-    emoji.innerHTML = `<img src=\"http://openweathermap.org/img/wn/01d.png">`;
-  }
-  // Cloudy
-  if (emojiDescription > 800) {
-    emoji.innerHTML = `<img src=\"http://openweathermap.org/img/wn/03d.png">`;
-  }
+  let image = weather[0].icon;
+  emoji.setAttribute("src", `http://openweathermap.org/img/wn/${image}.png`);
+  emoji.setAttribute("alt", response.data.weather[0].description);
 }
 
 //API
