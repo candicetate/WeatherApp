@@ -39,17 +39,18 @@ if (minutes < 10) {
   minutes = `0${minutes}`;
 }
 
+h3.innerHTML = `${day} ${month} ${date}, ${year}<br /> at ${hours}:${minutes}`;
+
 // Format Time for Forecast
 function formatHours(timestamp) {
-  let hours = now.getHours();
-  let minutes = now.getMinutes();
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
   return `${hours}:${minutes}`;
 }
-
-h3.innerHTML = `${day} ${month} ${date}, ${year}<br /> at ${hours}:${minutes}`;
 
 // Search
 // Current Weather
@@ -70,8 +71,11 @@ function showWeather(response) {
     response.data.weather[0].description;
 
   // Wind Speed
-
-  // Precipitation
+  let wind = document.querySelector("#wind");
+  wind.innerHTML = `${Math.round(response.data.wind.speed)} km/h`;
+  // Humidity
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = `${Math.round(response.data.main.humidity)}%`;
 
   // Emojis
   let emojiDescription = response.data.weather[0].id;
