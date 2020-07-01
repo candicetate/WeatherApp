@@ -79,9 +79,8 @@ function showWeather(response) {
 
   // Emojis
   let emoji = document.querySelector("#currentemoji");
-  let image = weather[0].icon;
-  emoji.setAttribute("src", `http://openweathermap.org/img/wn/${image}.png`);
-  emoji.setAttribute("alt", response.data.weather[0].description);
+  let image = response.data.weather[0].icon;
+  emoji.innerHTML = `<img src="http://openweathermap.org/img/wn/${image}.png">`;
 }
 
 //API
