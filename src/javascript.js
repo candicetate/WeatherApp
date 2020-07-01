@@ -39,7 +39,17 @@ if (minutes < 10) {
   minutes = `0${minutes}`;
 }
 
-h3.innerHTML = `${day} ${month} ${date}, ${year} at ${hours}:${minutes}`;
+// Format Time for Forecast
+function formatHours(timestamp) {
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${hours}:${minutes}`;
+}
+
+h3.innerHTML = `${day} ${month} ${date}, ${year}<br /> at ${hours}:${minutes}`;
 
 // Search
 // Current Weather
@@ -58,6 +68,10 @@ function showWeather(response) {
   // Description
   document.querySelector(".description").innerHTML =
     response.data.weather[0].description;
+
+  // Wind Speed
+
+  // Precipitation
 
   // Emojis
   let emojiDescription = response.data.weather[0].id;
@@ -90,11 +104,36 @@ function showWeather(response) {
 }
 
 //API
+
+// Forecast
+function showForecast(response) {
+  let forecastElement = document.querySelector("#futuretemperature");
+  forecastElement.innerHTML = null;
+  let forecast = null;
+
+  for (let index = 0; index < 6; index++) {
+    let forecast = response.data.list[index];
+    let image = forecast.weather[0].icon;
+    forecastElement.innerHTML += `<p class="futuretemp">
+              <span id="futuretemperature">${Math.round(
+                forecast.main.temp
+              )}°C <img id="futuretemp" src="http://openweathermap.org/img/wn/${image}.png"></span> at
+              <span class="time">
+               ${formatHours(forecast.dt * 1000)}
+              </span></p>`;
+  }
+}
+
+// City Search
 function searchCity(city) {
   let units = "metric";
   let apiKey = "82748eb647aa94c9acf7aa6a08000727";
+  // Weather
   let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiURL).then(showWeather);
+  // Forecast
+  let ApiURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(ApiURL).then(showForecast);
 }
 
 function handleSubmit(event) {

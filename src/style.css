@@ -16,14 +16,15 @@ h1 {
 }
 
 h2 {
+  font-size: 30px;
   font-style: italic;
   font-weight: 400;
-  line-height: 10px;
 }
 
 h3 {
-  font-size: 15px;
+  font-size: 25px;
   font-weight: 200;
+  line-height: 25px;
 }
 
 .maincity {
@@ -42,8 +43,9 @@ h3 {
   text-transform: capitalize;
 }
 
-.col-3 {
-  width: 100%;
+.col-md {
+  display: inline;
+  width: 175px;
 }
 
 .container {
@@ -58,12 +60,6 @@ h3 {
   border: 5px solid #00000025;
   border-radius: 10px;
   margin-bottom: 10px;
-}
-
-.dayofweek {
-  font-size: 18px;
-  font-weight: 400;
-  text-align: center;
 }
 
 .degrees {
@@ -103,7 +99,7 @@ h3 {
 }
 
 .fiveday {
-  font-size: 24px;
+  font-size: 16px;
   font-weight: bold;
   text-align: center;
   text-decoration: underline;
@@ -137,14 +133,24 @@ a.footer {
   text-align: center;
 }
 
+#futuretemp {
+  font-size: 25px;
+  font-weight: bold;
+  line-height: 30px;
+  text-align: center;
+}
+
+#futuretemp img {
+  padding: 5px;
+}
+
 .bigtext {
   font-size: 100px;
   font-weight: 900;
 }
 
-.precipitation {
-  font-size: 15px;
-  font-style: italic;
-  font-weight: 200;
-  line-height: 15px;
+.time {
+  font-size: 25px;
+  font-weight: 400;
+  text-align: center;
 }

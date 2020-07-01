@@ -32,85 +32,41 @@
         <!--First Column -->
         <div class="col-6 currentweather">
           <span class="bigtext" id="temperature"> </span>
-          <a href="#" id="degrees-c" class="active" alt="Convert to Metric"> °C</a
+          <a href="#" id="degrees-c" class="active" alt="Convert to Metric">
+            °C</a
           ><span class="degrees">/</span
           ><a href="#" id="degrees-f" alt="Convert to Imperial">°F</a>
 
           <h2>
             <span class="description"></span>
-            <span id="currentemoji">
+            <span id="currentemoji"></span>
           </h2>
 
-          <h3>Date and Time</h3>
+<h2><span class="windspeed">Wind Speed:</span><span id="wind"></span></h2>
+
+<h2><span class="precipitation">Precipitation:</span><span id="precip"></span></h2>   
 
           <span class="maincity"></span>
+
+          <h3>Date and Time</h3>
           <!-- Close First Column -->
         </div>
 
         <!--Second Column -->
-        <div class="col-6">
-          <p class="fiveday">5 Day Forecast</p>
 
-          <p class="futuretemp" id="nextday">
-            21°C
-            <span id="nextemoji"></span>
-            <br />
-            <span class="dayofweek">
-              Tomorrow
-            </span>
+        <div class="col-md">
+          <p class="fiveday">Future Updates</p>
+
+          <p class="futuretemp">
+            <span id="futuretemperature"> <span id="futuretemp"></span> at
+            <span class="time"> </span>
           </p>
-
-          <!-- 4 day future forcast row-->
-          <div class="row">
-            <div class="col-6">
-              <p class="futuretemp">
-                23°C
-                <i class="fas fa-sun"></i>
-                <br />
-                <span class="dayofweek">Saturday </span>
-              </p>
-            </div>
-            <div class="col-6">
-              <p class="futuretemp">
-                21°C
-                <i class="fas fa-cloud-sun"></i>
-                <br />
-                <span class="dayofweek">Sunday </span>
-              </p>
-            </div>
-            <!-- Close 4 day forecast row -->
-          </div>
-          <!-- 4 Day forecast second row-->
-          <div class="row">
-            <div class="col-6">
-              <p class="futuretemp">
-                23°C
-                <i class="fas fa-cloud-sun"></i>
-                <br />
-                <span class="dayofweek">Monday </span>
-              </p>
-            </div>
-            <div class="col-6">
-              <p class="futuretemp">
-                26°C
-                <i class="fas fa-cloud-sun"></i>
-                <br />
-                <span class="dayofweek">
-                  Tuesday
-                </span>
-              </p>
-            </div>
-            <!-- Close 4 day forecast 2nd row -->
-          </div>
-
-          <!-- Close Second Column -->
         </div>
-        <!-- Close First Row Div-->
+        <!-- Close 4 day forecast 2nd row -->
       </div>
 
-      <!-- Second Row Div-->
       <div class="row">
-        <!--First Column -->
+        <!--Search Bar Row -->
         <div class="col-12">
           <form id="search-form">
             <input
@@ -142,9 +98,7 @@
               Current Location
             </button>
           </form>
-          <!-- Close Second Column-->
         </div>
-        <!-- Close Second Row Div-->
       </div>
 
       <!-- Main Container Div -->
